@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>دانيال النبي | سفر دانيال</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Tahoma", "Arial", sans-serif;
+      background: #f7f2e8;
+      color: #2f2922;
+      line-height: 1.9;
+    }
+
+    /* ===== Header ===== */
+
+    header {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(35, 25, 15, 0.72), rgba(35, 25, 15, 0.72)),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .hero {
+      max-width: 900px;
+    }
+
+    .cross {
+      font-size: 55px;
+      color: #d4af37;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 65px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .hero h2 {
+      font-size: 25px;
+      font-weight: normal;
+      color: #e7d6a3;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 13px 30px;
+      border-radius: 30px;
+      background: #c49a3a;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #a47b25;
+      transform: translateY(-3px);
+    }
+
+    /* ===== Navigation ===== */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #332719;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    /* ===== General ===== */
+
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      color: #674c2c;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #756b5f;
+      font-size: 17px;
+    }
+
+    /* ===== About ===== */
+
+    .about {
+      background: #fffdf8;
+    }
+
+    .about-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 400px;
+      border-radius: 20px;
+      background:
+        linear-gradient(rgba(60,40,20,.2), rgba(60,40,20,.2)),
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBQRboCHD2r7iAzmN4DTiADcDMTuCW6Ylq_lu1972jmg&s=10")
+        center/cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+
+    .about-text h3 {
+      color: #674c2c;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      font-size: 17px;
+    }
+
+    /* ===== Cards ===== */
+
+    .cards {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 7px 20px rgba(0,0,0,.08);
+      transition: .3s;
+      border-top: 4px solid #c49a3a;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,.13);
+    }
+
+    .card .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #674c2c;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    /* ===== Book ===== */
+
+    .book {
+      background: #eee5d5;
+    }
+
+    .book-content {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .book-box {
+      background: #fffdf8;
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    }
+
+    .book-box p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .chapters {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .chapter {
+      background: #f3eadb;
+      padding: 18px;
+      border-radius: 12px;
+      border-right: 4px solid #c49a3a;
+      text-align: right;
+    }
+
+    .chapter strong {
+      color: #674c2c;
+    }
+
+    /* ===== Timeline ===== */
+
+    .timeline {
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      right: 20px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #c49a3a;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 65px 35px 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      width: 22px;
+      height: 22px;
+      background: #c49a3a;
+      border-radius: 50%;
+      border: 4px solid #f7f2e8;
+    }
+
+    .timeline-item h3 {
+      color: #674c2c;
+      margin-bottom: 5px;
+    }
+
+    /* ===== Verse ===== */
+
+    .verse {
+      background:
+        linear-gradient(rgba(45,31,19,.88), rgba(45,31,19,.88)),
+        url("https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+
+      color: white;
+      text-align: center;
+    }
+
+    .verse-box {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .verse-mark {
+      color: #d4af37;
+      font-size: 60px;
+    }
+
+    .verse blockquote {
+      font-size: 28px;
+      font-style: italic;
+      margin: 20px 0;
+    }
+
+    .verse cite {
+      color: #d9c48c;
+      font-size: 18px;
+    }
+
+    /* ===== Lessons ===== */
+
+    .lessons {
+      background: #fffdf8;
+    }
+
+    .lessons-list {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .lesson {
+      background: #f6efe2;
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .lesson h3 {
+      color: #674c2c;
+      margin-bottom: 8px;
+    }
+
+    /* ===== Footer ===== */
+
+    footer {
+      background: #292017;
+      color: #ddd;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer .cross-footer {
+      color: #d4af37;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    /* ===== Responsive ===== */
+
+    @media (max-width: 800px) {
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero h2 {
+        font-size: 20px;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .chapters {
+        grid-template-columns: 1fr;
+      }
+
+      .lessons-list {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+        font-size: 14px;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Hero ===== -->
+
+  <header id="home">
+
+    <div class="hero">
+
+      <div class="cross">✝</div>
+
+      <h1>دانيال النبي</h1>
+
+      <h2>رجل الإيمان والثبات أمام الله</h2>
+
+      <p>
+        رحلة في حياة دانيال النبي، وإيمانِه وسط ظروف صعبة،
+        مع نظرة إلى سفر دانيال وأهم أحداثه ورسائله الروحية.
+      </p>
+
+      <a href="#about" class="btn">اكتشف قصة دانيال</a>
+
+    </div>
+
+  </header>
+
+
+  <!-- ===== Navigation ===== -->
+
+  <nav>
+
+    <a href="#home">الرئيسية</a>
+    <a href="#about">من هو دانيال؟</a>
+    <a href="#book">سفر دانيال</a>
+    <a href="#events">أهم الأحداث</a>
+    <a href="#lessons">دروس روحية</a>
+    <a href="#verse">آية</a>
+
+  </nav>
+
+
+  <!-- ===== About ===== -->
+
+  <section class="about" id="about">
+
+    <div class="section-title">
+
+      <h2>من هو دانيال النبي؟</h2>
+
+      <p>
+        شخصية كتابية ارتبط اسمها بالإيمان والحكمة والأمانة
+      </p>
+
+    </div>
+
+
+    <div class="about-container">
+
+      <div class="about-image"></div>
+
+      <div class="about-text">
+
+        <h3>دانيال في السبي</h3>
+
+        <p>
+          كان دانيال من أبناء يهوذا الذين ذهبوا إلى السبي في بابل،
+          وهناك عاش في بيئة مختلفة عن وطنه وشعبه.
+        </p>
+
+        <p>
+          ومع ذلك، حافظ دانيال على علاقته بالله وتمسك بمبادئه،
+          وأظهر حكمة وأمانة في المواقف التي تعرض لها.
+        </p>
+
+        <p>
+          ويقدم سفر دانيال مجموعة من القصص والرؤى التي تتحدث
+          عن الإيمان، والثبات، وسيادة الله وسط الأحداث والتغيرات.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===== Book ===== -->
+
+  <section class="book" id="book">
+
+    <div class="section-title">
+
+      <h2>سفر دانيال</h2>
+
+      <p>نظرة عامة على السفر وأقسامه الرئيسية</p>
+
+    </div>
+
+
+    <div class="book-content">
+
+      <div class="book-box">
+
+        <p>
+          سفر دانيال هو أحد أسفار العهد القديم، ويجمع بين
+          القصص التاريخية والرؤى النبوية.
+        </p>
+
+        <p>
+          يتكون السفر من <strong>12 إصحاحًا</strong> في صورته
+          الأساسية، ويتناول حياة دانيال وأصحابه في بابل،
+          بالإضافة إلى عدد من الرؤى المتعلقة بالممالك والأزمنة.
+        </p>
+
+
+        <div class="chapters">
+
+          <div class="chapter">
+            <strong>الإصحاحات 1–6</strong>
+            <br>
+            قصص من حياة دانيال وأصحابه في بابل.
+          </div>
+
+          <div class="chapter">
+            <strong>الإصحاحات 7–12</strong>
+            <br>
+            رؤى وأحلام نبوية رآها دانيال.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===== Events ===== -->
+
+  <section id="events">
+
+    <div class="section-title">
+
+      <h2>أهم أحداث السفر</h2>
+
+      <p>محطات بارزة من سفر دانيال</p>
+
+    </div>
+
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <h3>دانيال في بابل</h3>
+
+        <p>
+          يبدأ السفر بوصول دانيال وبعض الشبان إلى بابل،
+          ومحاولتهم الحفاظ على أمانتهم ومبادئهم.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <h3>تفسير حلم نبوخذنصر</h3>
+
+        <p>
+          ظهر دانيال بحكمة عندما فسر حلم الملك
+          وأعلن أن معرفة الأسرار تأتي من الله.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <h3>أصحاب دانيال في أتون النار</h3>
+
+        <p>
+          يروي السفر قصة شدرخ وميشخ وعبدنغو وثباتهم
+          في إيمانهم أمام أمر الملك.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <h3>دانيال في جب الأسود</h3>
+
+        <p>
+          تعرض دانيال للاختبار بسبب أمانته وصلاته،
+          وأُلقي في جب الأسود، ثم يروي السفر كيف نجا.
+        </p>
+
+      </div>
+
+
+      <div class="timeline-item">
+
+        <h3>رؤى دانيال</h3>
+
+        <p>
+          تحتوي الأجزاء الأخيرة من السفر على رؤى رمزية
+          تتعلق بالممالك والأحداث المستقبلية بحسب نص السفر.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===== Verse ===== -->
+
+  <section class="verse" id="verse">
+
+    <div class="verse-box">
+
+      <div class="verse-mark">“</div>
+
+      <blockquote>
+        أما دانيال فجعل في قلبه أنه لا يتنجس بأطايب الملك
+      </blockquote>
+
+      <cite>سفر دانيال 1: 8</cite>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===== Lessons ===== -->
+
+  <section class="lessons" id="lessons">
+
+    <div class="section-title">
+
+      <h2>دروس روحية من حياة دانيال</h2>
+
+      <p>
+        أفكار يمكن التأمل فيها من أحداث السفر
+      </p>
+
+    </div>
+
+
+    <div class="lessons-list">
+
+      <div class="lesson">
+
+        <h3>✦ الثبات</h3>
+
+        <p>
+          الحفاظ على المبادئ والإيمان حتى في الظروف الصعبة.
+        </p>
+
+      </div>
+
+
+      <div class="lesson">
+
+        <h3>✦ الصلاة</h3>
+
+        <p>
+          تظهر الصلاة كجزء مهم من حياة دانيال وعلاقته بالله.
+        </p>
+
+      </div>
+
+
+      <div class="lesson">
+
+        <h3>✦ الأمانة</h3>
+
+        <p>
+          كان دانيال معروفًا بأمانته رغم تغير الملوك والظروف المحيطة به.
+        </p>
+
+      </div>
+
+
+      <div class="lesson">
+
+        <h3>✦ الحكمة</h3>
+
+        <p>
+          يقدم السفر دانيال كشخص طلب الحكمة من الله
+          وتعامل مع المواقف بحكمة.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===== Footer ===== -->
+
+  <footer>
+
+    <div class="cross-footer">✝</div>
+
+    <p>دانيال النبي — سفر دانيال</p>
+
+    <p>
+      صفحة تعريفية وتأملية حول شخصية دانيال النبي وسفره
+    </p>
+
+  </footer>
+
+
+  <!-- ===== JavaScript ===== -->
+
+  <script>
+
+    // تأثير بسيط عند الضغط على روابط القائمة
+
+    document.querySelectorAll('nav a').forEach(link => {
+
+      link.addEventListener('click', function() {
+
+        document.querySelectorAll('nav a').forEach(item => {
+          item.style.color = "white";
+        });
+
+        this.style.color = "#d4af37";
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
